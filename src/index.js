@@ -1,1 +1,2 @@
-document.write('Hello, world!');
+import "./dist/main.js"
+import "./src/css/style.css"
