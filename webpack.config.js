@@ -15,10 +15,8 @@ module.exports = {
         static: {
             directory: path.resolve(__dirname, 'dist'),
         },
-        stats: {
-            children: false,
-            maxModules: 0,
-        },
+        compress: true,
+        port: 9000,
     },
     plugins: [
         new MiniCssExtractPlugin(),
