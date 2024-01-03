@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans&display=swap');
+
+$bg-color: #fff;
+$main-cursor: pointer;
+%overlay {
+    background: #E0E2;
+    box-shadow: 0px 6px 59px rgba(53, 49, 84, 0.08);
+} 
+$base-grey-text: #5C6A79;
+$base-black-text: #1C2A39;
+$base-purple: #4C3DB2;
+$main-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28); 
+
+body {
+    font-size: 10px;
+}
+.container {
+    height: 2305px;
+    width: 100%;
+    background: $bg-color;
+}
+
+//HEADER
+header {
+    position: sticky;
+    top: 0;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: 1120px;
+    
+}
+
+.header__logo {
+    color: $base-black-text;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    gap: 2rem;
+    &-link {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: Montserrat;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        color: $base-grey-text;
+        &:hover {
+            font-weight: 900;
+            color: $base-black-text;
+        
+        }
+    }
+
+}
+
+.header-icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}

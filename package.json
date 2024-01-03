@@ -17,6 +17,7 @@
     "html-webpack-plugin": "^5.6.0",
     "imagemin": "^8.0.1",
     "mini-css-extract-plugin": "^2.7.6",
+    "node-sass": "^9.0.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "sass": "^1.69.6",
@@ -27,6 +28,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^11.0.0",
     "normalize.css": "^8.0.1"
   }
 }

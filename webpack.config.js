@@ -2,6 +2,7 @@ const path = require('path');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
@@ -21,17 +22,28 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.pug', // Изменили расширение на .pug
+      template: './src/index.pug', 
+    }),
+    new CopyWebpackPlugin({
+        patterns: [{
+        from: path.join(__dirname, 'src', 'images'),
+        to: path.join(__dirname, 'dist', 'images'),
+    },
+    ],
     }),
   ],
   module: {
     rules: [
+        {
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              'css-loader',
+              'sass-loader',
+            ],
+          },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.pug$/, // Добавили новое правило для обработки Pug
+        test: /\.pug$/, 
         loader: 'pug-loader',
       },
     ],
