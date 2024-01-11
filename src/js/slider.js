@@ -1,10 +1,10 @@
-const entities = [
+let entities = [
     {
-        img: 'https://w.forfun.com/fetch/da/daf8eb568fea522f6701fb9c66378cdc.jpeg',
+        img: './images/banner1.png',
         dot: document.querySelector('.dot-1')
     },
     {
-        img: 'https://w.forfun.com/fetch/da/daf8eb568fea522f6701fb9c66378cdc.jpeg',
+        img: './images/banner2.png',
         dot: document.querySelector('.dot-2'),
     },
     {

@@ -1,3 +1,7 @@
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss ***!
+  \***************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans&display=swap);
 /*!***********************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/normalize.css/normalize.css ***!
   \***********************************************************************************************************************************/
@@ -308,6 +312,175 @@ template {
  */
 [hidden] {
   display: none;
+}
+/*!*******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss (1) ***!
+  \*******************************************************************************************************************/
+body {
+  font-size: 10px;
+}
+
+.container {
+  height: 2305px;
+  width: 100%;
+  background: #fff;
+}
+
+header {
+  background-color: #FFF;
+  z-index: 10;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 1120px;
+  height: 116px;
+}
+
+.header__logo {
+  color: #1C2A39;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+  gap: 2rem;
+}
+.nav-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Montserrat;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #5C6A79;
+}
+.nav-link:hover {
+  font-weight: 900;
+  color: #1C2A39;
+}
+
+.header-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.header-icons__bag {
+  position: relative;
+}
+
+.header-icons__bag-quantity {
+  width: 13px;
+  height: 13px;
+  background-color: #FF353A;
+  border-radius: 100%;
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-box {
+  display: flex;
+  width: 1440px;
+}
+
+.slider-content {
+  display: flex;
+  overflow: hidden;
+  width: 1120px;
+}
+
+.slider-content__img {
+  transition: transform 0.3s ease;
+  background-size: cover;
+  background-position: center center;
+  width: 1120px;
+  height: 702px;
+}
+
+.slider-content__traidin {
+  width: 10.3%;
+  height: 204px;
+  background-color: #9E98DC;
+  color: #1C2A39;
+  text-decoration: none;
+  margin-left: -16%;
+  margin-top: 82px;
+  box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+  cursor: pointer;
+}
+.slider-content__traidin div {
+  padding-left: 10%;
+  padding-top: 100px;
+  width: 100%;
+}
+.slider-content__traidin svg {
+  padding-left: 10%;
+}
+
+.slider-content__top-books {
+  width: 137px;
+  height: 273px;
+  background-color: #FF8FE6;
+  color: #1C2A39;
+  text-decoration: none;
+  margin-left: -16%;
+  margin-top: 82px;
+  box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+  cursor: pointer;
+}
+.slider-content__top-books div {
+  padding-left: 10%;
+  padding-top: 100px;
+  width: 100%;
+}
+.slider-content__top-books svg {
+  padding-left: 10%;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dot {
+  opacity: 0.3;
+}
+
+.dot:hover {
+  opacity: 1 !important;
 }
 
 /*# sourceMappingURL=main.css.map*/
