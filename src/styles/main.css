@@ -25,7 +25,7 @@ header {
 }
 
 .header__logo {
-  color: #1C2A39;
+  color: #1c2a39;
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
@@ -49,15 +49,49 @@ header {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  color: #5C6A79;
+  color: #5c6a79;
 }
 .nav-link:hover {
   font-weight: 900;
-  color: #1C2A39;
+  color: #1c2a39;
 }
 
 .header-icons {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-}/*# sourceMappingURL=main.css.map */
+}
+
+.main-container {
+  display: flex;
+}
+
+.slider-content__img {
+  background-size: cover;
+  background-position: center center;
+  width: 1120px;
+}
+
+.slider-content__traidin {
+  height: 204px;
+  background-color: #9e98dc;
+  color: #1c2a39;
+  text-decoration: none;
+  margin-left: -16%;
+  margin-top: 82px;
+  box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+  cursor: pointer;
+}
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dot {
+  opacity: 0.3;
+}
+
+.dot:hover {
+  opacity: 1 !important;
+} /*# sourceMappingURL=main.css.map */

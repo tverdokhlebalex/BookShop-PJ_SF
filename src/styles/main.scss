@@ -22,8 +22,8 @@ body {
 
 //HEADER
 header {
-    position: sticky;
-    top: 0;
+    background-color: #FFF;
+    z-index: 10;
 }
 
 .header__wrapper {
@@ -34,6 +34,7 @@ header {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     width: 1120px;
+    height: 116px;
     
 }
 
@@ -75,4 +76,63 @@ header {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+}
+
+.header-icons__bag {
+    position: relative;
+}
+.header-icons__bag-quantity {
+    width: 13px;
+    height: 13px;
+    background-color: #FF353A;
+    border-radius: 100%;
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+.sticky + .content {
+    padding-top: 102px;
+}
+
+
+//SLIDER content
+
+.slider-content__img {
+    background-size: cover;
+    background-position: center center;
+    width: 1120px;
+}
+
+.slider-content__traidin {
+    height: 204px;
+    background-color: #9E98DC;
+    color: $base-black-text;
+    text-decoration: none;
+    margin-left: -16%;
+    margin-top: 82px;
+    box-shadow: $main-shadow;
+    cursor: $main-cursor;    
+}
+
+
+
+
+.dots {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  
+}
+
+.dot { 
+    opacity: 0.3;
+}
+
+.dot:hover {
+    opacity: 1 !important;
 }

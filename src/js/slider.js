@@ -1,12 +1,10 @@
-//навигация 
-
 const entities = [
     {
-        img: './images/banner1.png',
+        img: 'https://w.forfun.com/fetch/da/daf8eb568fea522f6701fb9c66378cdc.jpeg',
         dot: document.querySelector('.dot-1')
     },
     {
-        img: './images/banner2.png',
+        img: 'https://w.forfun.com/fetch/da/daf8eb568fea522f6701fb9c66378cdc.jpeg',
         dot: document.querySelector('.dot-2'),
     },
     {
@@ -14,32 +12,24 @@ const entities = [
         dot: document.querySelector('.dot-3'),
     }
 ];
+document.addEventListener('DOMContentLoaded', function() {
+
 
 const slider = document.querySelector('.slider-content__img');
+let currentIndex = 0;
 
-//ФУНКЦИИ 
-//замена фото на слайдах 
 function setEntity(index) {
-
     slider.style.backgroundImage = `url(${entities[index].img})`;
 }
 
-//2.Неактивные -> активные элементы
 function makeActive(index) {
     entities[index].dot.style.opacity = 1;
-    if (entities[index].line) {
-        entities[index].line.classList.add('brass-hypertext');
-    }
-}
-//3.Активные -> неактивные элементы
-function makeInactive(index) {
-    entities[index].dot.style.opacity = 0.3;
-    if (entities[index].line) {
-        entities[index].line.classList.remove('brass-hypertext');
-    }
 }
 
-//5.Переключение нажатием на точку/заголовок
+function makeInactive(index) {
+    entities[index].dot.style.opacity = 0.3;
+}
+
 function pressOnElement(index) {
     makeInactive(currentIndex);
     currentIndex = index;
@@ -47,31 +37,15 @@ function pressOnElement(index) {
     makeActive(currentIndex);
 }
 
-
-//ОБРАБОТКА НАЖАТИЙ:
-//0.Настройка на нулевой элемент
-let currentIndex = 0;
-
-//1. Левая стрелка
-arrowLeft.addEventListener('click', () => {
-    makeInactive(currentIndex);
-    currentIndex = (currentIndex === 0) ? entities.length - 1 : currentIndex - 1;
-    changeTextContent(currentIndex);
-    setEntity(currentIndex);
-    makeActive(currentIndex);
-});
-
-//1. Правая стрелка 
-arrowRight.addEventListener('click', () => {
+function autoSlide() {
     makeInactive(currentIndex);
     currentIndex = (currentIndex === entities.length - 1) ? 0 : currentIndex + 1;
-    changeTextContent(currentIndex);
     setEntity(currentIndex);
     makeActive(currentIndex);
-});
+}
 
+setInterval(autoSlide, 5000);
 
-//3. Точки и заголовки 
 for (let i = 0; i < entities.length; i++) {
     if (entities[i].dot) {
         entities[i].dot.addEventListener('click', () => {
@@ -80,7 +54,8 @@ for (let i = 0; i < entities.length; i++) {
     }
 }
 
-// Начальная настройка слайда
 setEntity(currentIndex);
 makeActive(currentIndex);
+});
 
+console.log(entities[0].img);
