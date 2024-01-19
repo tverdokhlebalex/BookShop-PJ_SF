@@ -411,14 +411,22 @@ header {
 }
 
 .slider-box {
+  position: relative;
+  margin-left: 320px;
+  align-items: center;
   display: flex;
-  width: 1440px;
+  width: 100%;
+  margin-bottom: 17px;
 }
 
 .slider-content {
   display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  width: 1120px;
+  width: 1440px;
 }
 
 .slider-content__img {
@@ -430,40 +438,70 @@ header {
 }
 
 .slider-content__traidin {
-  width: 10.3%;
+  position: absolute;
+  top: 79px;
+  right: 240px;
+  display: flex;
+  flex-direction: column;
+  width: 149px;
   height: 204px;
   background-color: #9E98DC;
   color: #1C2A39;
   text-decoration: none;
-  margin-left: -16%;
-  margin-top: 82px;
   box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+  z-index: 5;
   cursor: pointer;
+}
+.slider-content__traidin:hover {
+  transform: scale(1.1);
 }
 .slider-content__traidin div {
   padding-left: 10%;
-  padding-top: 100px;
+  padding-top: 102px;
   width: 100%;
+  color: #1C2A39;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: left;
 }
 .slider-content__traidin svg {
   padding-left: 10%;
 }
 
 .slider-content__top-books {
+  position: absolute;
+  bottom: 70px;
+  right: 160px;
+  display: flex;
+  flex-direction: column;
   width: 137px;
   height: 273px;
   background-color: #FF8FE6;
   color: #1C2A39;
   text-decoration: none;
-  margin-left: -16%;
-  margin-top: 82px;
   box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
   cursor: pointer;
+  z-index: 5;
+}
+.slider-content__top-books:hover {
+  transform: scale(1.1);
 }
 .slider-content__top-books div {
   padding-left: 10%;
-  padding-top: 100px;
+  padding-top: 149px;
   width: 100%;
+  color: #1C2A39;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: left;
 }
 .slider-content__top-books svg {
   padding-left: 10%;
@@ -481,6 +519,47 @@ header {
 
 .dot:hover {
   opacity: 1 !important;
+  transform: scale(1.1);
+}
+
+.books-categories {
+  width: 29%;
+  height: 710px;
+  background-color: #EFEEF6;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: capitalize;
+  color: #5C6A79;
+}
+.books-categories ul {
+  width: 50%;
+  height: 93%;
+  padding-left: 30%;
+  margin-top: 45px;
+}
+.books-categories ul li {
+  cursor: pointer;
+  padding-bottom: 23px;
+  position: relative;
+  list-style: none;
+}
+.books-categories ul li:hover, .books-categories ul li:active {
+  color: #1C2A39;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.books-categories ul li:hover::before, .books-categories ul li:active::before {
+  content: "url(./images/icons/Ellipse3.svg)";
+  color: #1C2A39;
+  position: absolute;
+  left: -15px;
 }
 
 /*# sourceMappingURL=main.css.map*/

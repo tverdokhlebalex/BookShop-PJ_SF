@@ -6,7 +6,7 @@ function toggleHeaderSticky() {
   
   // Проверяем наличие header перед выполнением других операций
   if (header) {
-    const sticky = header.offsetTop;
+    let sticky = header.offsetTop;
 
     // Пересчитываем значение offsetTop при изменении размеров окна
     window.addEventListener('resize', function() {

@@ -15,15 +15,17 @@ body {
     font-size: 10px;
 }
 .container {
-    height: 2305px;
     width: 100%;
     background: $bg-color;
+    margin: 0 auto;
 }
 
 //HEADER
 header {
     background-color: #FFF;
     z-index: 10;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .header__wrapper {
@@ -33,7 +35,7 @@ header {
     margin: 0 auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    width: 1120px;
+    max-width: 1120px;
     height: 116px;
     
 }
@@ -109,19 +111,24 @@ header {
 
 }
 .slider-box {
+    position: relative;
+    margin: 0 auto;
+    align-items: center;
     display: flex;
     width: 100%;
     margin-bottom: 17px;
 }
 .slider-content {
     display: flex;
+    text-align: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    overflow: hidden;
-    width: 1120px;
+    width: 1440px;
     
 }
 .slider-content__img {
+    margin: 0 auto;
     transition: transform 0.3s ease; 
     background-size: cover;
     background-position: center center;
@@ -130,6 +137,9 @@ header {
 }
 
 .slider-content__traidin {
+    position: absolute;
+    top: 79px;
+    right: 240px;
     display: flex;
     flex-direction: column;
     width: 149px;
@@ -137,11 +147,12 @@ header {
     background-color: #9E98DC;
     color: #1C2A39;
     text-decoration: none;
-    margin-left: -20%;
-    margin-top: 82px;
     box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
-    z-index: 2;
+    z-index: 5;
     cursor: $main-cursor;
+    &:hover {
+        transform: scale(1.1)
+    }
     div {
         padding-left:10%;
         padding-top: 102px;
@@ -153,14 +164,19 @@ header {
         font-weight: 700;
         line-height: normal;
         text-transform: uppercase;
+        text-align: left;
     }
     svg {
-        padding-left: 8%;
+        padding-left: 10%;
     }
 }
 
 
 .slider-content__top-books {
+    
+    position: absolute;
+    bottom: 70px;
+    right: 160px;
     display: flex;
     flex-direction: column;
     width: 137px;
@@ -168,10 +184,12 @@ header {
     background-color: #FF8FE6;
     color: #1C2A39;
     text-decoration: none;
-    margin-left: -16%;
-    margin-top: 82px;
     box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
     cursor: $main-cursor;
+    z-index: 5;
+    &:hover {
+        transform: scale(1.1)
+    }
     div {
         padding-left:10%;
         padding-top: 149px;
@@ -183,16 +201,19 @@ header {
         font-weight: 700;
         line-height: normal;
         text-transform: uppercase;
+        text-align: left;
     }
     svg {
         padding-left: 10%;
-    }  
+    }
+      
 }
 
 .dots {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 105px;
   
 }
 
@@ -202,4 +223,57 @@ header {
 
 .dot:hover {
     opacity: 1 !important;
+    transform: scale(1.1)
+}
+
+//BOOKS
+.books-content {
+    display: flex;
+}
+
+//aside
+
+.books-categories {
+    width: 29%;
+    height: 710px;
+    background-color: #EFEEF6;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: capitalize;
+    color: #5C6A79;
+    ul {
+        width: 50%; 
+        height: 93%;
+        padding-left: 30%;
+        margin-top: 45px;
+        li {
+            cursor: $main-cursor;
+            padding-bottom: 23px;
+            position: relative;
+            list-style: none;
+    
+            &:hover,
+            &:active {
+                color: $base-black-text;
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: capitalize;
+    
+                &::before {
+                    content: '\2022';
+                    color: #756AD3;
+                    position: absolute;
+                    left: -15px;
+                }
+            }
+    
+            
+        }
+    }
 }
