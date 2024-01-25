@@ -1,4 +1,4 @@
-let entities = [
+const entities = [
     {
         img: './images/banner1.png',
         dot: document.querySelector('.dot-1')

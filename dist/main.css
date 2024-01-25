@@ -316,19 +316,23 @@ template {
 /*!*******************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss (1) ***!
   \*******************************************************************************************************************/
+@charset "UTF-8";
 body {
   font-size: 10px;
 }
 
 .container {
-  height: 2305px;
   width: 100%;
   background: #fff;
+  margin: 0 auto;
 }
 
 header {
   background-color: #FFF;
   z-index: 10;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 
 .header__wrapper {
@@ -338,7 +342,7 @@ header {
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  width: 1120px;
+  max-width: 1120px;
   height: 116px;
 }
 
@@ -350,6 +354,7 @@ header {
   font-weight: 700;
   line-height: normal;
   text-decoration: none;
+  z-index: 20;
 }
 
 .nav {
@@ -378,6 +383,7 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  z-index: 30;
 }
 
 .header-icons__bag {
@@ -394,16 +400,88 @@ header {
   bottom: -3px;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+.header-icons__burger {
+  display: none;
 }
 
-.sticky + .content {
-  padding-top: 102px;
+@media (max-width: 767px) {
+  .header-icons__burger {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+  }
+  .header-icons__burger::before {
+    content: "";
+    top: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #1C2A39;
+    border-radius: 5px;
+  }
+  .header-icons__burger span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #1C2A39;
+    border-radius: 5px;
+  }
+  .header-icons__burger::after {
+    content: "";
+    bottom: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #1C2A39;
+    border-radius: 5px;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 30%;
+    height: 15%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 110px 15px 0px 0px;
+    transition: right 0.3s ease 0s;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: 5px;
+  }
+  .nav::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    height: 116px;
+    background-color: #FFF;
+  }
+  .nav-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #fff;
+  }
+  .nav-link:hover {
+    font-weight: 900;
+    color: #5C6A79;
+  }
+  .nav._active {
+    right: 0;
+  }
 }
-
 .slider {
   display: flex;
   justify-content: center;
@@ -412,7 +490,7 @@ header {
 
 .slider-box {
   position: relative;
-  margin-left: 320px;
+  margin: 0 auto;
   align-items: center;
   display: flex;
   width: 100%;
@@ -425,22 +503,23 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   width: 1440px;
 }
 
 .slider-content__img {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
   transition: transform 0.3s ease;
   background-size: cover;
   background-position: center center;
-  width: 1120px;
   height: 702px;
 }
 
 .slider-content__traidin {
   position: absolute;
   top: 79px;
-  right: 240px;
+  right: 78px;
   display: flex;
   flex-direction: column;
   width: 149px;
@@ -456,7 +535,7 @@ header {
   transform: scale(1.1);
 }
 .slider-content__traidin div {
-  padding-left: 10%;
+  padding-left: 14%;
   padding-top: 102px;
   width: 100%;
   color: #1C2A39;
@@ -469,13 +548,13 @@ header {
   text-align: left;
 }
 .slider-content__traidin svg {
-  padding-left: 10%;
+  padding-left: 14%;
 }
 
 .slider-content__top-books {
   position: absolute;
   bottom: 70px;
-  right: 160px;
+  right: 0px;
   display: flex;
   flex-direction: column;
   width: 137px;
@@ -491,7 +570,7 @@ header {
   transform: scale(1.1);
 }
 .slider-content__top-books div {
-  padding-left: 10%;
+  padding-left: 14%;
   padding-top: 149px;
   width: 100%;
   color: #1C2A39;
@@ -504,13 +583,14 @@ header {
   text-align: left;
 }
 .slider-content__top-books svg {
-  padding-left: 10%;
+  padding-left: 14%;
 }
 
 .dots {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 105px;
 }
 
 .dot {
@@ -520,6 +600,10 @@ header {
 .dot:hover {
   opacity: 1 !important;
   transform: scale(1.1);
+}
+
+.books-content {
+  display: flex;
 }
 
 .books-categories {
@@ -546,6 +630,11 @@ header {
   position: relative;
   list-style: none;
 }
+.books-categories ul li .btn-category {
+  border: none;
+  background: none;
+  white-space: nowrap;
+}
 .books-categories ul li:hover, .books-categories ul li:active {
   color: #1C2A39;
   font-family: Montserrat;
@@ -556,10 +645,23 @@ header {
   text-transform: capitalize;
 }
 .books-categories ul li:hover::before, .books-categories ul li:active::before {
-  content: "url(./images/icons/Ellipse3.svg)";
-  color: #1C2A39;
+  content: "•";
+  color: #756AD3;
   position: absolute;
   left: -15px;
+}
+
+.book-card {
+  display: flex;
+  height: 300px;
+  font-size: 10px;
+}
+
+.book-card__img {
+  background-color: red;
+  background-size: cover;
+  width: 212px;
+  height: 300px;
 }
 
 /*# sourceMappingURL=main.css.map*/

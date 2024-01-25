@@ -1,17 +1,21 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans&display=swap");
 body {
   font-size: 10px;
 }
 
 .container {
-  height: 2305px;
   width: 100%;
   background: #fff;
+  margin: 0 auto;
 }
 
 header {
+  background-color: #FFF;
+  z-index: 10;
   position: sticky;
   top: 0;
+  width: 100%;
 }
 
 .header__wrapper {
@@ -21,17 +25,19 @@ header {
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  width: 1120px;
+  max-width: 1120px;
+  height: 116px;
 }
 
 .header__logo {
-  color: #1c2a39;
+  color: #1C2A39;
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   text-decoration: none;
+  z-index: 20;
 }
 
 .nav {
@@ -49,43 +55,225 @@ header {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  color: #5c6a79;
+  color: #5C6A79;
 }
 .nav-link:hover {
   font-weight: 900;
-  color: #1c2a39;
+  color: #1C2A39;
 }
 
 .header-icons {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  z-index: 30;
 }
 
-.main-container {
+.header-icons__bag {
+  position: relative;
+}
+
+.header-icons__bag-quantity {
+  width: 13px;
+  height: 13px;
+  background-color: #FF353A;
+  border-radius: 100%;
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+}
+
+.header-icons__burger {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .header-icons__burger {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+  }
+  .header-icons__burger::before {
+    content: "";
+    top: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #1C2A39;
+    border-radius: 5px;
+  }
+  .header-icons__burger span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #1C2A39;
+    border-radius: 5px;
+  }
+  .header-icons__burger::after {
+    content: "";
+    bottom: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #1C2A39;
+    border-radius: 5px;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 30%;
+    height: 15%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 110px 15px 0px 0px;
+    transition: right 0.3s ease 0s;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: 5px;
+  }
+  .nav::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    height: 116px;
+    background-color: #FFF;
+  }
+  .nav-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #fff;
+  }
+  .nav-link:hover {
+    font-weight: 900;
+    color: #5C6A79;
+  }
+  .nav._active {
+    right: 0;
+  }
+}
+.slider {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-box {
+  position: relative;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  margin-bottom: 17px;
+}
+
+.slider-content {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
 }
 
 .slider-content__img {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
   background-size: cover;
   background-position: center center;
-  width: 1120px;
+  height: 702px;
 }
 
 .slider-content__traidin {
+  position: absolute;
+  top: 79px;
+  right: 78px;
+  display: flex;
+  flex-direction: column;
+  width: 149px;
   height: 204px;
-  background-color: #9e98dc;
-  color: #1c2a39;
+  background-color: #9E98DC;
+  color: #1C2A39;
   text-decoration: none;
-  margin-left: -16%;
-  margin-top: 82px;
   box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+  z-index: 5;
   cursor: pointer;
 }
+.slider-content__traidin:hover {
+  transform: scale(1.1);
+}
+.slider-content__traidin div {
+  padding-left: 14%;
+  padding-top: 102px;
+  width: 100%;
+  color: #1C2A39;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: left;
+}
+.slider-content__traidin svg {
+  padding-left: 14%;
+}
+
+.slider-content__top-books {
+  position: absolute;
+  bottom: 70px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 137px;
+  height: 273px;
+  background-color: #FF8FE6;
+  color: #1C2A39;
+  text-decoration: none;
+  box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+  cursor: pointer;
+  z-index: 5;
+}
+.slider-content__top-books:hover {
+  transform: scale(1.1);
+}
+.slider-content__top-books div {
+  padding-left: 14%;
+  padding-top: 149px;
+  width: 100%;
+  color: #1C2A39;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: left;
+}
+.slider-content__top-books svg {
+  padding-left: 14%;
+}
+
 .dots {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 105px;
 }
 
 .dot {
@@ -94,4 +282,67 @@ header {
 
 .dot:hover {
   opacity: 1 !important;
-} /*# sourceMappingURL=main.css.map */
+  transform: scale(1.1);
+}
+
+.books-content {
+  display: flex;
+}
+
+.books-categories {
+  width: 29%;
+  height: 710px;
+  background-color: #EFEEF6;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: capitalize;
+  color: #5C6A79;
+}
+.books-categories ul {
+  width: 50%;
+  height: 93%;
+  padding-left: 30%;
+  margin-top: 45px;
+}
+.books-categories ul li {
+  cursor: pointer;
+  padding-bottom: 23px;
+  position: relative;
+  list-style: none;
+}
+.books-categories ul li .btn-category {
+  border: none;
+  background: none;
+  white-space: nowrap;
+}
+.books-categories ul li:hover, .books-categories ul li:active {
+  color: #1C2A39;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.books-categories ul li:hover::before, .books-categories ul li:active::before {
+  content: "•";
+  color: #756AD3;
+  position: absolute;
+  left: -15px;
+}
+
+.book-card {
+  display: flex;
+  height: 300px;
+  font-size: 10px;
+}
+
+.book-card__img {
+  background-image: url(./images/book-img.png);
+  background-size: cover;
+  width: 212px;
+  height: 300px;
+}/*# sourceMappingURL=main.css.map */
