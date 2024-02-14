@@ -341,7 +341,7 @@ header {
 }
 
 .book-card__img {
-  background-image: url(./images/book-img.png);
+  background-image: url(../images/book-img.png);
   background-size: cover;
   width: 212px;
   height: 300px;

@@ -1,14 +1,14 @@
 // переменные
-const apiKey = "AIzaSyBgK_3N7g4vl0LNPFGkS7ZkqQV6n1GOG4w"; // API google key 
-const categoryBooks = document.querySelectorAll('.category-books'); // категории книг 
+const apiKey = "AIzaSyDD0voh3-eos2F4Up5XMfXKv7c--WPm77o"; // API google key 
+const btnСategory = document.querySelectorAll('.btn-category'); // категории книг 
 const buttonBasket = document.querySelector('.header-icons__bag'); // кнопка корзины 
 const productQuantity = document.querySelector('.header-icons__bag-quantity'); // ярлык кол-ва покупок 
-const elementCountBuy = document.querySelector('header-icons__bag-quantity-text'); // кол-во покупок 
-const loadMore = document.querySelector('.load-more'); // кнопка load more 
+const elementCountBuy = document.querySelector('.header-icons__bag-quantity-text'); // кол-во покупок 
+const loadMore = document.querySelector('.load_more'); // кнопка load more 
 let resultItog = []; //Массив с отображаемым в данный момент товаром
 let idBuy = 0; //ID для сохранения информации о товаре в localStorage
 let countBuy = 0; //Счетчик покупок
-let buttonBuy = document.getElementsByClassName('buy'); // кнопка buy now / in the cart
+let buttonBuy = document.getElementsByClassName('.buy'); // кнопка buy now / in the cart
 
 // Массив категорий книг 
 const categories = ['Architecture', 'Art', 'Autobiography', 'Business', 'Crafts & Hobbies', 'Drama', 'Fiction', 'Cooking', 'Health & Fitness', 'History', 'Humor', 'Poetry', 'Psychology', 'Science', 'Technology', 'Travel'];
@@ -240,25 +240,25 @@ function shoppingCounter(result){
 }
 
 //Делаем первоначальный запрос
-useRequest(`https://www.googleapis.com/books/v1/volumes?q="subject:Architecture"&key=${keyAPI}&printType=books&startIndex=0&maxResults=6&langRestrict=en`, displayResult)
+useRequest(`https://www.googleapis.com/books/v1/volumes?q="subject:Architecture"&key=${apiKey}&printType=books&startIndex=0&maxResults=6&langRestrict=en`, displayResult)
 
 let count = 6; //Задаем значение счетчику, который используется в URL
 let categor = 'Architecture'; //Задае првонаальное значение категории книг
 
-//Обработчик нажания на категорию
-for(let i = 0; i < genre.length; i++) {
-    genre[i].addEventListener('click', () => {
-        resultItog = [];// При переходи из одной категори в другую обновляем массив с отображаемыми карточками товара
-        count = 6; //Обновляем счетчик
-        selectingAnElement(genre[i]);
-        categor = categories[i]; //Обновляем выбранную категорию
-        useRequest(`https://www.googleapis.com/books/v1/volumes?q="subject:${categor}"&key=${keyAPI}&printType=books&startIndex=0&maxResults=6&langRestrict=en`, displayResult)
+//Обработчик нажатия на категорию
+for(let i = 0; i < btnСategory.length; i++) {
+    btnСategory[i].addEventListener('click', () => {
+        resultItog = []; // При переходе из одной категории в другую обновляем массив с отображаемыми карточками товара
+        count = 6; // Обновляем счетчик
+        // Удалено: selectingAnElement(btnСategory[i]);
+        categor = categories[i]; // Обновляем выбранную категорию
+        useRequest(`https://www.googleapis.com/books/v1/volumes?q="subject:${categor}"&key=${apiKey}&printType=books&startIndex=0&maxResults=6&langRestrict=en`, displayResult)
     });
 };
 
 //Обработчик нажания на Load more
-load.addEventListener('click', () =>{
-    useRequest(`https://www.googleapis.com/books/v1/volumes?q="subject:${categor}"&key=${keyAPI}&printType=books&startIndex=${count}&maxResults=6&langRestrict=en`, displayResult);
+loadMore.addEventListener('click', () =>{
+    useRequest(`https://www.googleapis.com/books/v1/volumes?q="subject:${categor}"&key=${apiKey}&printType=books&startIndex=${count}&maxResults=6&langRestrict=en`, displayResult);
     count += 6
 });
 

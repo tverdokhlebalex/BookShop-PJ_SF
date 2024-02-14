@@ -447,7 +447,6 @@ header {
     top: 0;
     right: -100%;
     width: 30%;
-    height: 15%;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 110px 15px 0px 0px;
     transition: right 0.3s ease 0s;
@@ -602,12 +601,24 @@ header {
   transform: scale(1.1);
 }
 
+.books {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .books-content {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.books-wrapper {
   display: flex;
 }
 
 .books-categories {
-  width: 29%;
+  width: 416px;
   height: 710px;
   background-color: #EFEEF6;
   font-family: "Montserrat";
@@ -617,6 +628,7 @@ header {
   line-height: 15px;
   text-transform: capitalize;
   color: #5C6A79;
+  z-index: 2;
 }
 .books-categories ul {
   width: 50%;
@@ -653,15 +665,109 @@ header {
 
 .book-card {
   display: flex;
+  width: 413px;
   height: 300px;
-  font-size: 10px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 36px;
 }
 
-.book-card__img {
-  background-color: red;
-  background-size: cover;
+.book-img img {
   width: 212px;
   height: 300px;
+  box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+  object-fit: cover;
+  object-position: center;
+}
+
+.book-title {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #1C2A39;
+}
+
+.book-authors {
+  color: #5C6A79;
+  font-family: "Open Sans";
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.book-rating, .reviews {
+  color: #5C6A79;
+  font-family: "Open Sans";
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.stars {
+  display: flex; /* Вывод звездочек рейтинга в один ряд */
+  align-items: center; /* Вертикальное выравнивание звездочек */
+}
+
+.full-star, .half-star, .empty-star {
+  margin-right: 4px; /* Расстояние между звездами */
+}
+
+.book-description {
+  color: #333; /* Цвет описания книги */
+  margin-bottom: 10px; /* Отступ после описания */
+}
+
+.book-price {
+  font-weight: bold; /* Жирность шрифта цены */
+  color: #333; /* Цвет цены */
+  margin-bottom: 15px; /* Отступ после цены */
+}
+
+.buy-button {
+  background-color: #5C6A79; /* Фон кнопки покупки */
+  color: #fff; /* Цвет текста кнопки покупки */
+  padding: 10px 20px; /* Паддинги кнопки */
+  border: none; /* Убрать рамку кнопки */
+  cursor: pointer; /* Курсор в виде пальца */
+  border-radius: 4px; /* Скругление углов кнопки */
+  transition: background-color 0.3s; /* Анимация фона кнопки */
+}
+
+.buy-button:hover {
+  background-color: #4e5866; /* Смена цвета фона кнопки при наведении */
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.full-star {
+  background-image: url(e376cccbc8f00d095ff1.svg);
+}
+
+.half-star {
+  background-image: url(bd947c4e126c46d37a92.svg);
+}
+
+.empty-star {
+  background-image: url(b7733d7fef79909394bf.svg);
 }
 
 /*# sourceMappingURL=main.css.map*/

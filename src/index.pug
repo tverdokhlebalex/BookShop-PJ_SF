@@ -4,6 +4,43 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
+    mixin starRating(rating)
+        - var fullStars = Math.floor(rating)
+        - var hasHalfStar = rating % 1 >= 0.5
+        - var emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0)
+        .stars
+            each _ in Array(fullStars)
+                span.full-star.star
+            if hasHalfStar
+                span.half-star.star
+            each _ in Array(emptyStars)
+                span.empty-star.star
+    mixin bookCard(book)
+        .book-card
+            .book-img
+                if book.imageLinks && book.imageLinks.thumbnail
+                    img(src=book.imageLinks.thumbnail alt=book.title)
+                else
+                    img(src='./images/book-img.png' alt='Placeholder Image')
+            .book-info
+                if book.authors && book.authors.length
+                    .book-authors #{book.authors.join(', ')}
+                .book-title #{book.title}
+                
+                if book.averageRating
+                    +starRating(book.averageRating)
+                    span.reviews (#{book.ratingsCount || 'No'} reviews)
+                else
+                    .book-rating No rating
+                .book-description
+                    p #{book.description ? book.description.substring(0, 100) + '...' : 'No description'}
+                if book.saleInfo && book.saleInfo.retailPrice
+                    .book-price #{book.saleInfo.retailPrice.amount} #{book.saleInfo.retailPrice.currencyCode}
+                else
+                    .book-price Not available
+                button.buy-button Buy Now
+
+
     body
         .container 
             header(id="header") 
@@ -41,7 +78,9 @@ html(lang="en")
                                 .header-icons__bag-quantity-text 
                         .header-icons__burger 
                             span 
+            
             main
+                
                 .main-container
                     section.slider 
                         .slider-content
@@ -78,56 +117,21 @@ html(lang="en")
                                     img(src="./images/icons/dot.svg", alt="dot")
                     section.books
                         .books-content 
+                            - var categories = ["Architecture", "Art & Fashion", "Biography", "Business", "Crafts & Hobbies", "Drama", "Fiction", "Food & Drink", "Health & Wellbeing", "History & Politics", "Humor", "Poetry", "Psychology", "Science", "Technology", "Travel & Maps"]
+
                             aside.books-categories 
                                 ul 
-                                    li 
-                                        button.btn-category Architecture
-                                    li 
-                                        button.btn-category Art & Fashion
-                                    li 
-                                        button.btn-category Biography
-                                    li 
-                                        button.btn-category Business
-                                    li
-                                        button.btn-category Crafts & Hobbies
-                                    li
-                                        button.btn-category Drama
-                                    li
-                                        button.btn-category Fiction
-                                    li  
-                                        button.btn-category Food & Drink
-                                    li
-                                        button.btn-category Health & Wellbeing
-                                    li
-                                        button.btn-category History & Politics
-                                    li
-                                        button.btn-category Humor
-                                    li  
-                                        button.btn-category Poetry
-                                    li  
-                                        button.btn-category Psychology
-                                    li  
-                                        button.btn-category Science
-                                    li  
-                                        button.btn-category Technology
-                                    li  
-                                        button.btn-category Travel & Maps
-                            
-                            .books-wrapper
-                                .book-catalog
-                                    .book-card
-                                        .book-card__img 
-                                        .book-card__content
-                                                .book-auther 
-                                                .book-title 
-                                                .book-rating
-                                                .book-description
-                                                .book-saleinfo 
-                                                button.buy-now 
-                                        
-                                            
+                                    each category in categories
+                                        li 
+                                            button.btn-category #{category}
 
-                                button.load-more  
+                            
+                            .div_shelf_of_books
+                                .shelf_of_books
+                                button.load_more Load more
+
+                                                         
+
 
                                         
 
