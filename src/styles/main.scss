@@ -342,10 +342,6 @@ header {
     max-width: 1120px;
 }
 
-.books-wrapper {
-    display: flex;
-
-  }
 
 //aside
 
@@ -496,6 +492,22 @@ h3 {
     align-items: center;
 
 }
+@media (max-width: 767px) { 
+    .shelf_of_books {
+      width: auto; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+    }
+  
+    .product_card {
+      width: 100%; 
+      margin-bottom: 20px; 
+    }
+    .slider{
+        display: none;
+    }
+  }
 
 .div_shelf_of_books button {
     width: 176px;
