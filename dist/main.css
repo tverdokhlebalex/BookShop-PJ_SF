@@ -400,7 +400,20 @@ header {
   bottom: -3px;
 }
 
+.header-icons__bag-quantity-text {
+  font-family: Montserrat;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  color: #FFF;
+  text-align: center;
+}
+
 .header-icons__burger {
+  display: none;
+}
+
+.no_activ {
   display: none;
 }
 
@@ -605,12 +618,13 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: #fff;
+  align-items: center;
 }
 
 .books-content {
   display: flex;
-  position: relative;
-  flex-wrap: wrap;
+  width: 1120px;
 }
 
 .books-wrapper {
@@ -620,6 +634,7 @@ header {
 .books-categories {
   width: 416px;
   height: 710px;
+  margin-left: -160px;
   background-color: #EFEEF6;
   font-family: "Montserrat";
   font-style: normal;
@@ -628,12 +643,11 @@ header {
   line-height: 15px;
   text-transform: capitalize;
   color: #5C6A79;
-  z-index: 2;
 }
 .books-categories ul {
   width: 50%;
   height: 93%;
-  padding-left: 30%;
+  padding-left: 36%;
   margin-top: 45px;
 }
 .books-categories ul li {
@@ -663,86 +677,150 @@ header {
   left: -15px;
 }
 
-.book-card {
+.product_card {
   display: flex;
-  width: 413px;
   height: 300px;
-  justify-content: space-between;
-  align-items: center;
-  gap: 36px;
+  margin-bottom: 91px;
+  font-size: 10px;
 }
 
-.book-img img {
+.image_book {
+  background-image: url(042103486e7bfdf49b38.png);
+  background-size: cover;
   width: 212px;
   height: 300px;
-  box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
-  object-fit: cover;
-  object-position: center;
+  box-shadow: 0px 20px 33px rgba(0, 0, 0, 0.2);
 }
 
-.book-title {
-  font-family: Montserrat;
-  font-size: 16px;
+.books .container {
+  justify-content: left;
+  align-items: normal;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 176px;
+  padding-left: 36px;
+  padding-bottom: 36px;
+}
+
+.shelf_of_books {
+  width: 924px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.div_shelf_of_books {
+  margin-left: -60px;
+  margin-top: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.div_shelf_of_books button {
+  width: 176px;
+  height: 45px;
+  border: 1px solid #4C3DB2;
+  font-family: "Montserrat";
+  font-style: normal;
   font-weight: 700;
-  line-height: 20px;
-  letter-spacing: 0%;
-  text-align: left;
-  color: #1C2A39;
+  font-size: 8px;
+  line-height: 10px;
+  text-transform: uppercase;
+  color: #4C3DB2;
+  background-color: #fff;
 }
 
-.book-authors {
+.div_shelf_of_books > button {
+  margin-left: 358px;
+  margin-bottom: 74px;
+}
+
+.shelf_of_books > button {
+  margin-left: 382px;
+  margin-bottom: 74px;
+}
+
+.container_descrip {
+  width: 180px;
+  height: 40px;
+  padding: 2px;
+  margin-top: 17px;
+  margin-bottom: 10px;
+}
+
+.descrip {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.3em;
+  height: 3.9em;
+}
+
+h2 {
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.rating-mini {
+  display: inline-block;
+  font-size: 0;
+}
+
+.rating-mini span {
+  padding: 0;
+  font-size: 20px;
+  line-height: 1;
+  color: lightgrey;
+}
+
+.rating-mini > span:before {
+  content: "★";
+}
+
+.rating-mini > span.active {
+  color: gold;
+}
+
+.basket {
+  display: flex;
+}
+
+.product_quantity {
+  margin-left: -9px;
+  margin-top: 8px;
+}
+
+.no_activ {
+  display: none;
+}
+
+.div_shelf_of_books .in_the_cart {
+  border: 1px solid #EEEDF5;
   color: #5C6A79;
-  font-family: "Open Sans";
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: 0%;
-  text-align: left;
-  text-transform: capitalize;
+  background-color: #fff;
 }
 
-.book-rating, .reviews {
-  color: #5C6A79;
-  font-family: "Open Sans";
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: 0%;
-  text-align: left;
+button:hover {
+  transform: scale(1.03);
 }
 
-.stars {
-  display: flex; /* Вывод звездочек рейтинга в один ряд */
-  align-items: center; /* Вертикальное выравнивание звездочек */
+button:active {
+  transform: scale(0.97);
 }
 
-.full-star, .half-star, .empty-star {
-  margin-right: 4px; /* Расстояние между звездами */
+a:hover {
+  text-decoration: underline;
 }
 
-.book-description {
-  color: #333; /* Цвет описания книги */
-  margin-bottom: 10px; /* Отступ после описания */
-}
-
-.book-price {
-  font-weight: bold; /* Жирность шрифта цены */
-  color: #333; /* Цвет цены */
-  margin-bottom: 15px; /* Отступ после цены */
-}
-
-.buy-button {
-  background-color: #5C6A79; /* Фон кнопки покупки */
-  color: #fff; /* Цвет текста кнопки покупки */
-  padding: 10px 20px; /* Паддинги кнопки */
-  border: none; /* Убрать рамку кнопки */
-  cursor: pointer; /* Курсор в виде пальца */
-  border-radius: 4px; /* Скругление углов кнопки */
-  transition: background-color 0.3s; /* Анимация фона кнопки */
-}
-
-.buy-button:hover {
-  background-color: #4e5866; /* Смена цвета фона кнопки при наведении */
+a:active {
+  color: #596e85;
 }
 
 .stars {
