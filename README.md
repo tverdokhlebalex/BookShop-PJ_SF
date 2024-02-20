@@ -1,6 +1,5 @@
 # Книжный интернет-магазин на API Google Books
-https://github.com/tverdokhlebalex/BookShop-PJ_SF/blob/main/src/images/screenshot.png
-
+![Логотип проекта](./src/images/screenshot.png)
 ### Иснтрукция для разработки и тестирования
 
 + npm
